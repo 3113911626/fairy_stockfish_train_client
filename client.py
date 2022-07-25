@@ -9,9 +9,32 @@ import client_helper
 import time
 import fairy
 import argparse
+import multiprocessing as mp
 
 FILE_NAME = "xiangqi.bin"
+FILE_NAME2 = "xiangqi2.bin"
+FILE_NAME3 = "xiangqi3.bin"
+FILE_NAME4 = "xiangqi4.bin"
+FILE_NAME5 = "xiangqi5.bin"
+FILE_NAME6 = "xiangqi6.bin"
+FILE_NAME7 = "xiangqi7.bin"
+FILE_NAME8 = "xiangqi8.bin"
+FILE_NAME9 = "xiangqi9.bin"
+FILE_NAME10 = "xiangqi10.bin"
+FILE_NAME11 = "xiangqi11.bin"
+FILE_NAME12 = "xiangqi12.bin"
 FILE_NAME_UPLOAD = "xiangqi-upload.bin"
+FILE_NAME_UPLOAD2 = "xiangqi-upload2.bin"
+FILE_NAME_UPLOAD3 = "xiangqi-upload3.bin"
+FILE_NAME_UPLOAD4 = "xiangqi-upload4.bin"
+FILE_NAME_UPLOAD5 = "xiangqi-upload5.bin"
+FILE_NAME_UPLOAD6 = "xiangqi-upload6.bin"
+FILE_NAME_UPLOAD7 = "xiangqi-upload7.bin"
+FILE_NAME_UPLOAD8 = "xiangqi-upload8.bin"
+FILE_NAME_UPLOAD9 = "xiangqi-upload9.bin"
+FILE_NAME_UPLOAD10 = "xiangqi-upload10.bin"
+FILE_NAME_UPLOAD11 = "xiangqi-upload11.bin"
+FILE_NAME_UPLOAD12 = "xiangqi-upload12.bin"
 program_version = "1.2"
 model_version = -1
 Debug = False
@@ -123,22 +146,172 @@ def upload_data():
             sys.exit(1)
     shutil.rmtree(FILE_NAME_UPLOAD, ignore_errors=True)
     update_model(result[0], result[1])
+def upload_data2():
+    global generation_params
+    with open(FILE_NAME_UPLOAD2, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD2, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data3():
+    global generation_params
+    with open(FILE_NAME_UPLOAD3, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD3, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data4():
+    global generation_params
+    with open(FILE_NAME_UPLOAD4, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD4, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data5():
+    global generation_params
+    with open(FILE_NAME_UPLOAD5, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD5, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data6():
+    global generation_params
+    with open(FILE_NAME_UPLOAD6, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD6, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data7():
+    global generation_params
+    with open(FILE_NAME_UPLOAD7, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD7, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data8():
+    global generation_params
+    with open(FILE_NAME_UPLOAD8, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD8, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data9():
+    global generation_params
+    with open(FILE_NAME_UPLOAD9, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD9, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data10():
+    global generation_params
+    with open(FILE_NAME_UPLOAD10, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD10, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data11():
+    global generation_params
+    with open(FILE_NAME_UPLOAD11, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD11, ignore_errors=True)
+    update_model(result[0], result[1])
+def upload_data12():
+    global generation_params
+    with open(FILE_NAME_UPLOAD12, "rb") as f:
+        result = client_helper.upload_data(f.read(), model_version, Args.user,
+                                           params_to_str(params_compress(generation_params)))
+        if "params" in result:
+            generation_params = params_decompress(result["params"])
+        if result[1] == "客户端版本不正确":
+            print("客户端版本不正确，请更新客户端")
+            sys.exit(1)
+    shutil.rmtree(FILE_NAME_UPLOAD12, ignore_errors=True)
+    update_model(result[0], result[1])
 
+def xc():
+    fairy.generate_data(generation_params, threads=Args.threads, amount=generate_amount)
+def xc2():
+    fairy.generate_data2(generation_params, threads=Args.threads, amount=generate_amount)
+def xc3():
+    fairy.generate_data3(generation_params, threads=Args.threads, amount=generate_amount)
+def xc4():
+    fairy.generate_data4(generation_params, threads=Args.threads, amount=generate_amount)
+def xc5():
+    fairy.generate_data5(generation_params, threads=Args.threads, amount=generate_amount)
+def xc6():
+    fairy.generate_data6(generation_params, threads=Args.threads, amount=generate_amount)
+def xc7():
+    fairy.generate_data7(generation_params, threads=Args.threads, amount=generate_amount)
+def xc8():
+    fairy.generate_data8(generation_params, threads=Args.threads, amount=generate_amount)
+def xc9():
+    fairy.generate_data9(generation_params, threads=Args.threads, amount=generate_amount)
+def xc10():
+    fairy.generate_data10(generation_params, threads=Args.threads, amount=generate_amount)
+def xc11():
+    fairy.generate_data11(generation_params, threads=Args.threads, amount=generate_amount)
+def xc12():
+    fairy.generate_data12(generation_params, threads=Args.threads, amount=generate_amount)
 
-if __name__ == "__main__":
-    print("-----------------------------------")
-    print(f"----- 以 {Args.user} 身份进行训练 -----")
-    print("-----------------------------------")
-    check_update()
+def wfl():
     while True:
-        if NEED_EXIT:
-            sys.exit(0)
         try:
             print("开始生成棋谱，该过程耗时较长，请耐心等待……")
             start_time = time.time()
-            fairy.generate_data(generation_params, threads=Args.threads, amount=generate_amount)
+            xc()
             time_cost = time.time() - start_time
-            speed = generate_amount / time_cost
+            speed = 10000 / time_cost
             generate_amount = int(120 * speed)
             generate_amount = (generate_amount // 10000) * 10000
             generate_amount = max(generate_amount, 10000)
@@ -146,7 +319,6 @@ if __name__ == "__main__":
             if not os.path.exists(FILE_NAME):
                 print("棋谱文件不存在，上传失败！")
                 time.sleep(1)
-                continue
             shutil.move(FILE_NAME, FILE_NAME_UPLOAD)
             thread_upload = threading.Thread(target=upload_data)
             thread_upload.setDaemon(True)
@@ -155,3 +327,278 @@ if __name__ == "__main__":
             print(repr(ex))
             traceback.print_exc()
         time.sleep(0.1)
+
+def wfl2():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc2()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME2):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME2, FILE_NAME_UPLOAD2)
+            thread_upload = threading.Thread(target=upload_data2)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl3():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc3()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME3):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME3, FILE_NAME_UPLOAD3)
+            thread_upload = threading.Thread(target=upload_data3)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl4():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc4()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME4):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME4, FILE_NAME_UPLOAD4)
+            thread_upload = threading.Thread(target=upload_data4)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl5():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc5()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME5):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME5, FILE_NAME_UPLOAD5)
+            thread_upload = threading.Thread(target=upload_data5)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl6():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc6()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME6):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME6, FILE_NAME_UPLOAD6)
+            thread_upload = threading.Thread(target=upload_data6)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl7():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc7()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME7):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME7, FILE_NAME_UPLOAD7)
+            thread_upload = threading.Thread(target=upload_data7)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl8():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc8()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME8):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME8, FILE_NAME_UPLOAD8)
+            thread_upload = threading.Thread(target=upload_data8)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl9():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc9()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME9):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME9, FILE_NAME_UPLOAD9)
+            thread_upload = threading.Thread(target=upload_data9)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl10():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc10()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME10):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME10, FILE_NAME_UPLOAD10)
+            thread_upload = threading.Thread(target=upload_data10)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl11():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc11()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME11):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME11, FILE_NAME_UPLOAD11)
+            thread_upload = threading.Thread(target=upload_data)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+def wfl12():
+    while True:
+        try:
+            print("开始生成棋谱，该过程耗时较长，请耐心等待……")
+            start_time = time.time()
+            xc12()
+            time_cost = time.time() - start_time
+            speed = 10000 / time_cost
+            generate_amount = int(120 * speed)
+            generate_amount = (generate_amount // 10000) * 10000
+            generate_amount = max(generate_amount, 10000)
+            print("生成完成！耗时: {0}s, 下次生成预计生成 {1} 棋谱".format(round(time_cost, 1), generate_amount))
+            if not os.path.exists(FILE_NAME12):
+                print("棋谱文件不存在，上传失败！")
+                time.sleep(1)
+            shutil.move(FILE_NAME12, FILE_NAME_UPLOAD12)
+            thread_upload = threading.Thread(target=upload_data)
+            thread_upload.setDaemon(True)
+            thread_upload.start()
+        except Exception as ex:
+            print(repr(ex))
+            traceback.print_exc()
+        time.sleep(0.1)
+
+if __name__ == "__main__":
+    print("-----------------------------------")
+    print(f"----- 以 {Args.user} 身份进行训练 -----")
+    print("-----------------------------------")
+    check_update()
+    print("启动多进程1……")
+    thread1 = mp.Process(target= wfl,daemon=False)
+    thread2 = mp.Process(target= wfl2,daemon=False)
+    thread1.start()
+    thread2.start()
